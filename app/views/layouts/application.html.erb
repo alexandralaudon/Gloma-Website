@@ -11,6 +11,13 @@
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Gloria Kestenbaum</a>
+
+        <form class="navbar-form form-inline pull-right">
+          <input type="text" placeholder="Email">
+          <input type="password" placeholder="Password">
+          <button type="submit" class="btn btn-danger">Sign in</button>
+        </form>
+
       </div>
     </div>
   </nav>
@@ -34,9 +41,6 @@
       <div class="col-md-3 text-right">
         <%=link_to "https://www.linkedin.com/pub/gloria-kestenbaum/0/aa1/48" do %>
         <%=image_tag("linkedin.jpg", height:"25")%>
-        <%end%>
-        <%=link_to "https://twitter.com/AlexandraLaudon" do %>
-        <%=image_tag("twitter.jpg", height:"25")%>
         <%end%>
       </div>
     </footer>
