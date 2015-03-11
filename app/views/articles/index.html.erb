@@ -1,0 +1,25 @@
+<div class='page-header'>
+  <%= link_to 'New Article', new_article_path, class:'btn btn-info pull-right' %>
+  <h1>Here are all the articles associated with your website</h1>
+</div>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Label Order</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %> </td>
+        <td><%= article.link[0..30] %></td>
+        <td><%= article.label_order %></td>
+        <td><%= article.blurb %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

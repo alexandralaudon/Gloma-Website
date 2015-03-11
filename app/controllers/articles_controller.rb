@@ -1,7 +1,8 @@
-class StructuresController < ApplicationController
+class ArticlesController < ApplicationController
   before_action :ensure_current_user
+
   def index
-    @articles = Article.all.order(:category)
+    @articles = Article.all
   end
 
   def new
@@ -12,7 +13,7 @@ class StructuresController < ApplicationController
     @article = Article.new(article_params)
     if @article.save
       flash[:notice] = "#{@article.title} was saved!"
-      redirect_to structures_path
+      redirect_to articles_path
     else
       flash[:danger] = 'Uh-oh, this did not work.  Did you enter all the correct fields?'
       render :new
@@ -30,7 +31,7 @@ class StructuresController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to structure_path(@article)
+      redirect_to article_path(@article)
     else
       render :edit
     end
@@ -40,7 +41,7 @@ class StructuresController < ApplicationController
     article = Article.find(params[:id])
     article.destroy
     flash[:notice] = "Article: '#{article}' was deleted from the database"
-    redirect_to structures_path
+    redirect_to articles_path
   end
 
 

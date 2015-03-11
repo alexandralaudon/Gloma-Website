@@ -8,7 +8,7 @@ class AuthenticationController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:notice] = "Good job #{user.username.capitalize}, you have signed into your website"
-      redirect_to structures_path
+      redirect_to articles_path
     else
       flash[:danger] = 'Bad Gloma.  Try again'
       render :new
