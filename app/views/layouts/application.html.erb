@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GloiaApp</title>
+  <title>Yay for Gloma</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Gloria Kestenbaum</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <!-- Adding create/update/destroy task note if relevant -->
+    <% if notice %>
+      <p class="alert alert-success" role="alert"><%= flash[:notice] %></p>
+    <% end %>
 
-<%= yield %>
+    <%= yield %>
+
+    <div class="page-header">
+    </div>
+
+    <footer class="footer">
+
+      <div class="col-md-9">
+        <%= link_to "Home", root_path %>
+      </div>
+
+      <div class="col-md-3 text-right">
+        <%=link_to "https://www.linkedin.com/pub/gloria-kestenbaum/0/aa1/48" do %>
+        <%=image_tag("linkedin.jpg", height:"25")%>
+        <%end%>
+        <%=link_to "https://twitter.com/AlexandraLaudon" do %>
+        <%=image_tag("twitter.jpg", height:"25")%>
+        <%end%>
+      </div>
+    </footer>
+
+  </div>
 
 </body>
 </html>
