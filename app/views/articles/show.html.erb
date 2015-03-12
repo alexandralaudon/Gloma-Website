@@ -1,18 +1,31 @@
 <div class="page-header">
-  <h1><%= @article.title %></h1>
+  <h1>Title: <%= @article.title %></h1>
 </div>
-<div class="form-group">
-  <div class="col-md-offset-3 col-md-6">
+<div class="container">
+  <div class="col-md-offset-2 col-md-8">
     <div class="well">
-      <%= @article.link %>
-      <%= @article.label_order %>
-
-      <% @categories.each do |category| %>
-        <%= category.category_name %>
-      <% end %>
-
-      <%= @article.blurb %>
-      <%= image_tag @article.avatar.url(:medium) %>
+      <div class="form-group">
+        <b>Article Link:</b>
+        <%= @article.link %>
+      </div>
+      <div class="form-group">
+        <b>Article Label Order:</b>
+        <%= @article.label_order %>
+      </div>
+      <div class="form-group">
+        <b>Article Categories:</b>
+        <% @categories.each do |category| %>
+          <%= category.category_name %>, 
+        <% end %>
+      </div>
+      <div class="form-group">
+        <b>Article Blurb:</b>
+        <%= @article.blurb %>
+      </div>
+      <div class="form-group">
+        <b>Article Image:</b>
+        <%= image_tag @article.avatar.url(:medium) %>
+      </div>
     </div>
   </div>
 </div>
