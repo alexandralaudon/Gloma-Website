@@ -1,7 +1,7 @@
 <%= link_to 'Sign out', sign_out_path, method: :delete %>
 
 <div class='page-header'>
-  <div class='pull-right'>
+  <div class='text-right'>
     <%= link_to 'New Article', new_article_path, class:'btn btn-primary pull-right' %>
     <%= link_to 'New Category', categories_path, class:'btn btn-info pull-right' %>
   </div>
@@ -12,9 +12,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Category</th>
-      <th>Blurb</th>
-
       <th>Update</th>
     </tr>
   </thead>
@@ -22,15 +19,12 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.title %> </td>
-        <td><%= article.blurb %></td>
-        <td>
-          <%= link_to "Edit", edit_article_path(article), class:'btn btn-info' %>
-        </td>
+        <td><%= link_to "Edit", edit_article_path(article), class:'btn btn-info' %></td>
       </tr>
     <% end %>
 
     <% @categories.each do |category| %>
-      <%= category.id %>
+      <%= category.category_name %>
     <% end %>
   </tbody>
 </table>
