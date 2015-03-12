@@ -1,4 +1,4 @@
 class Article < ActiveRecord::Base
-  has_many :categorizations
-  has_many :categories, through: :categorizations
+  has_many :articles_categories
+  has_many :categories, through: :articles_categories
 end

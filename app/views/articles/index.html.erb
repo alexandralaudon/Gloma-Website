@@ -22,12 +22,15 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.title %> </td>
-        <td><%= article.categories.id %></td>
         <td><%= article.blurb %></td>
         <td>
           <%= link_to "Edit", edit_article_path(article), class:'btn btn-info' %>
         </td>
       </tr>
+    <% end %>
+
+    <% @categories.each do |category| %>
+      <%= category.id %>
     <% end %>
   </tbody>
 </table>

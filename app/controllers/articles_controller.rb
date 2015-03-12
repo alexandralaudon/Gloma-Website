@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @categories = @article.categories
   end
 
   def new
