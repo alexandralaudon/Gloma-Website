@@ -18,6 +18,6 @@ class AuthenticationController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:notice] = 'You have successfully signed out.'
-    redirect_to admin_path
+    redirect_to root_path
   end
 end

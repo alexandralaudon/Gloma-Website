@@ -1,4 +1,4 @@
-<%= link_to 'Sign out', sign_out_path, method: :delete %>
+<%= link_to 'Sign out', signout_path %>
 
 <div class='page-header'>
   <div class='text-right'>
@@ -21,10 +21,6 @@
         <td><%= article.title %> </td>
         <td><%= link_to "Edit", edit_article_path(article), class:'btn btn-info' %></td>
       </tr>
-    <% end %>
-
-    <% @categories.each do |category| %>
-      <%= category.category_name %>
     <% end %>
   </tbody>
 </table>
