@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'authentication#new'
   post 'admin', to: 'authentication#create'
-
+  get 'sign-out', to: 'authentication#destroy'
+  
   resources :articles
   resources :categories
   # Example of regular route:
