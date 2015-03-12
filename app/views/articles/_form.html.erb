@@ -26,7 +26,7 @@
     <div class='form-group'>
       <%= f.label :category_id, class: "col-md-2 control-label" %>
       <div class='col-md-5'>
-        <%= f.collection_select :category_id, Category.all, :id, :category_name, {}, class: 'form-control' %>
+        <%= collection_select :article, :category_id, Category.all, :id, :category_name, {:selected => 1}, {class: 'form-control'} %>
       </div>
     </div>
 
@@ -40,10 +40,10 @@
     <div class='form-group'>
       <div class='col-md-offset-2 col-md-10'>
         <%= f.submit button_nm, class: 'btn btn-primary' %>
-        <%= link_to 'Cancel', structures_path, class: 'btn btn-default' %>
+        <%= link_to 'Cancel', articles_path, class: 'btn btn-default' %>
 
         <% if controller.action_name == 'edit'  %>
-        <%= link_to 'Delete Article', structure_path, method: :delete, class:'btn btn-danger' %>
+        <%= link_to 'Delete Article', article_path, method: :delete, class:'btn btn-danger' %>
         <% end %>
       </div>
     </div>
