@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-
+  before_action :ensure_current_user
+  
   def index
     @categories = Category.all
     @category = Category.new
@@ -27,7 +28,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:category_name))
+    params.require(:category).permit(:category_name)
   end
 
 end

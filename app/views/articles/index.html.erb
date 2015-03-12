@@ -1,6 +1,9 @@
 <div class='page-header'>
-  <%= link_to 'New Article', new_article_path, class:'btn btn-info pull-right' %>
-  <h1>Here are all the articles associated with your website</h1>
+  <div class='pull-right'>
+    <%= link_to 'New Article', new_article_path, class:'btn btn-primary pull-right' %>
+    <%= link_to 'New Category', categories_path, class:'btn btn-info pull-right' %>
+  </div>
+  <h1>Articles listed on Gloma</h1>
 </div>
 
 <table class='table table-striped'>
